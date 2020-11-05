@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import {Button} from "@material-ui/core"
+import MiComponente from "./MiComponente";
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        <MiComponente mensaje="Yaharo" />
       </header>
     </div>
   );
