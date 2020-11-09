@@ -1,23 +1,106 @@
-import logo from './logo.svg';
-import './App.css';
-import {Button} from "@material-ui/core"
-import MiComponente from "./MiComponente";
+import 'semantic-ui-css/semantic.min.css'
+import { Button, Icon, Label, Menu, Segment, Image} from 'semantic-ui-react'
+import MyModal from './MyModal';
+import React from "react";
+
+
+class Cambio extends React.Component{
+  constructor(props){
+    super(props)
+    window.helloComponent = this;
+    this.state={
+      src:""
+    }
+  }
+
+  MyGif = (a) =>{
+    this.setState({
+      src: a
+    })
+  }
+
+  render(){
+    return(
+      <div className="Cambio">
+        <Segment inverted>
+        <Image centered src={this.state.src} />
+        </Segment>
+      </div>
+    )
+  }
+}
 
 function App() {
+
+  var [openModal, setOpenModal] = React.useState(false);
+
+  console.log("modal state", openModal);
+
+  function gifIna(){
+    window.helloComponent.MyGif("https://media.tenor.com/images/b5bfaa4a85b1dff47803cc082d8856f2/tenor.gif");
+  }
+
+  function gifFubuki(){
+    window.helloComponent.MyGif("https://media1.tenor.com/images/6effcb5e0f720ec904eefb2551fd84ab/tenor.gif");
+  }
+
+  function gifMarine(){
+    window.helloComponent.MyGif("https://media1.tenor.com/images/ae37217f57af05eff7586a69716a42f4/tenor.gif");
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://hub.docker.com/repository/docker/nokker/docker1-pruebanode"
-          target="_blank"
-          rel="noopener noreferrer"
+       <Menu>
+        <Menu.Item
+          name='Ina'          
+          onClick={gifIna}
         >
-          Repositorio Docker
-        </a>
-        <MiComponente/>
-      </header>
+          Ina
+        </Menu.Item>
+
+        <Menu.Item
+          name='Fubuki'
+          
+          onClick={gifFubuki}
+        >
+          Fubuki
+        </Menu.Item>
+
+        <Menu.Item
+          name='Marine'          
+          onClick={gifMarine}
+        >
+          Marine
+        </Menu.Item>
+      </Menu>
+       <Button as='div' labelPosition='right' onClick={(e,d)=>setOpenModal(true)}>
+      <Button icon>
+        <Icon name='heart' />
+        Like
+      </Button>
+      <Label as='a' basic pointing='left'>
+        2,048
+      </Label>
+    </Button>
+    <Button as='div' labelPosition='left'>
+      <Label as='a' basic pointing='right'>
+        2,048
+      </Label>
+      <Button icon>
+        <Icon name='heart' />
+        Like
+      </Button>
+    </Button>
+    <Button as='div' labelPosition='left'>
+      <Label as='a' basic>
+        2,048
+      </Label>
+      <Button icon>
+        <Icon name='fork' />
+      </Button>
+    </Button>
+    <MyModal visible={openModal} onClose={()=>{console.log("close"); setOpenModal(false);}} />
+    <Cambio/>
     </div>
   );
 }
