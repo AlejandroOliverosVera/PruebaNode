@@ -1,5 +1,5 @@
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Icon, Label, Menu, Segment, Image} from 'semantic-ui-react'
+import { Button, Icon, Label, Menu, Image} from 'semantic-ui-react'
 import MyModal from './MyModal';
 import React from "react";
 
@@ -22,9 +22,7 @@ class Cambio extends React.Component{
   render(){
     return(
       <div className="Cambio">
-        <Segment inverted>
         <Image centered src={this.state.src} />
-        </Segment>
       </div>
     )
   }
@@ -50,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-       <Menu>
+       <Menu inverted>
         <Menu.Item
           name='Ina'          
           onClick={gifIna}
