@@ -8,18 +8,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://hub.docker.com/repository/docker/nokker/docker1-pruebanode"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Repositorio Docker
         </a>
-        <MiComponente mensaje="Yaharo" />
+        <MiComponente/>
       </header>
     </div>
   );
