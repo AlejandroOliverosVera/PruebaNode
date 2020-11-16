@@ -9,7 +9,7 @@ class Cambio extends React.Component{
     super(props)
     window.helloComponent = this;
     this.state={
-      src:""
+      src:"https://i.pinimg.com/originals/55/82/b7/5582b708139eb343e1375d6961ab2b02.gif"
     }
   }
   
@@ -41,7 +41,7 @@ function App() {
   console.log("modal state", openModal);
 
   function gifIna(){
-    window.helloComponent.MyGif("https://media.tenor.com/images/b5bfaa4a85b1dff47803cc082d8856f2/tenor.gif");
+    window.helloComponent.MyGif("https://media1.tenor.com/images/9d8813c0398119cd853424e4db7de2e9/tenor.gif");
   }
 
   function gifFubuki(){
@@ -51,8 +51,6 @@ function App() {
   function gifMarine(){
     window.helloComponent.MyGif("https://media1.tenor.com/images/ae37217f57af05eff7586a69716a42f4/tenor.gif");
   }
-
-
   
   return (
     <div className="App">
