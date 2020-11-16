@@ -12,6 +12,10 @@ class Cambio extends React.Component{
       src:""
     }
   }
+  
+  componentDidMount() {
+    document.body.style.backgroundColor = "#133f5a"
+  }
 
   MyGif = (a) =>{
     this.setState({
@@ -27,6 +31,8 @@ class Cambio extends React.Component{
     )
   }
 }
+
+
 
 function App() {
 
@@ -46,9 +52,11 @@ function App() {
     window.helloComponent.MyGif("https://media1.tenor.com/images/ae37217f57af05eff7586a69716a42f4/tenor.gif");
   }
 
+
+  
   return (
     <div className="App">
-       <Menu inverted>
+      <Menu inverted>
         <Menu.Item
           name='Ina'          
           onClick={gifIna}
@@ -71,7 +79,7 @@ function App() {
           Marine
         </Menu.Item>
       </Menu>
-       <Button as='div' labelPosition='right' onClick={(e,d)=>setOpenModal(true)}>
+      <Button as='div' labelPosition='right' onClick={(e,d)=>setOpenModal(true)}>
       <Button icon>
         <Icon name='heart' />
         Like
